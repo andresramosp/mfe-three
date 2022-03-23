@@ -1,18 +1,26 @@
 <template>
-  <l-map v-if="mounted" style="height: 300px" :zoom="zoom" :center="center">
-    <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-    <l-marker :lat-lng="markerLatLng"></l-marker>
-  </l-map>
+  <div>
+    <l-map v-if="mounted" style="height: 300px" :zoom="zoom" :center="center">
+      <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
+      <l-marker :lat-lng="markerLatLng"></l-marker>
+    </l-map>
+    <div class="shared-comp">
+      <SharedComponent />
+    </div>
+  </div>
 </template>
 
 <script>
 import { LMap, LTileLayer, LMarker } from "@vue-leaflet/vue-leaflet";
-
+import { defineAsyncComponent } from "vue";
 export default {
   components: {
     LMap,
     LTileLayer,
     LMarker,
+    SharedComponent: defineAsyncComponent(() =>
+      import("MfeOne/SharedComponent")
+    ),
   },
   data() {
     return {

@@ -14,7 +14,8 @@ module.exports = defineConfig({
         name: 'MfeThree',
         filename: 'remoteEntry.js',
         remotes: {
-          ModuleAuth: 'ModuleAuth@http://localhost:9898/remoteEntry.js'
+          ModuleAuth: 'ModuleAuth@http://localhost:9898/remoteEntry.js',
+          MfeOne: 'MfeOne@http://localhost:9999/remoteEntry.js',
         },
         exposes: {
           './MfeThree': './src/bootstrap.js' // implica wrapper en consumer que use el mount exportado por main
