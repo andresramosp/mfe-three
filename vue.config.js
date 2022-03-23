@@ -13,21 +13,22 @@ module.exports = defineConfig({
       new ModuleFederationPlugin({
         name: 'MfeThree',
         filename: 'remoteEntry.js',
+        remotes: {
+          ModuleAuth: 'ModuleAuth@http://localhost:9898/remoteEntry.js'
+        },
         exposes: {
           './MfeThree': './src/bootstrap.js' // implica wrapper en consumer que use el mount exportado por main
           //'./MfeThree': './src/components/MfeThree-MainComponent.vue'
         },
-        // shared: {
-        //   vue: {
-        //     eager: true,
-        //     singleton: true,
-        //     requiredVersion: deps.vue
-        //   },
-        //   'element-plus': {
-        //     eager: true
-        //   }
-        // },
-        shared: require('./package.json').dependencies,
+        shared: {
+          vue: {
+            eager: true,
+            singleton: true,
+            requiredVersion: deps.vue
+          },
+          ...require('./package.json').dependencies
+        },
+        // shared: require('./package.json').dependencies,
       })
     ]
   }

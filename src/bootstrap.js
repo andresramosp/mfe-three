@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-import App from './MfeThree-App.vue'
+import MfeThreeApp from './MfeThree-App.vue'
 
 import "leaflet/dist/leaflet.css"
 
@@ -7,7 +7,7 @@ import "leaflet/dist/leaflet.css"
 // app.mount('#app')
 
 const mount = (el) => {
-    const app = createApp(App)
+    const app = createApp(MfeThreeApp)
     app.mount(el)
     // createApp(App).mount(el);
 };
