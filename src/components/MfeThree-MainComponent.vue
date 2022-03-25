@@ -1,10 +1,10 @@
 <template>
   <div class="hello">
-    <h1>{{ 'Micro Frontend Three (Vue 3 + Leaflet)' }}</h1>
-    <div class="login-info">
+     <div class="login-info">
       <div class="logged" v-if="logged">Logged in with token {{ token }}</div>
       <div class="not-logged" v-else>Not Logged</div>
     </div>
+    <h1>{{ 'Micro Frontend Three (Vue 3 + Leaflet)' }}</h1>
     <MfeThreeChildComponent v-if="logged" />
   </div>
 </template>

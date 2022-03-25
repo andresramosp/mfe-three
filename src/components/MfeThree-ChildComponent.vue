@@ -38,3 +38,14 @@ export default {
   },
 };
 </script>
+<style scoped>
+.shared-comp {
+  background-color: lightgray;
+  padding: 10px;
+  width: 25%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 35%;
+}
+
+</style>
