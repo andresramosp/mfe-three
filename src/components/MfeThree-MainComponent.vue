@@ -65,12 +65,5 @@ li {
 a {
   color: #42b983;
 }
-.not-logged {
-  background-color: pink;
-  width: 100px;
-}
-.logged {
-  background-color: greenyellow;
-  width: 250px;
-}
+
 </style>
